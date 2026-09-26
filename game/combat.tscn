@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cruuhcs3hvv1t"]
+
+[ext_resource type="Script" uid="uid://bdq1m1qm5qyri" path="res://combat.gd" id="1_raif2"]
+
+[node name="Combat" type="Node2D" unique_id=47453392]
+script = ExtResource("1_raif2")
+
+[node name="Button" type="Button" parent="." unique_id=405100231]
+offset_left = 184.0
+offset_top = 196.0
+offset_right = 984.0
+offset_bottom = 466.0
+text = "no"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

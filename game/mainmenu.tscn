@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bywwp6gfw1qkh"]
+
+[ext_resource type="Script" uid="uid://cqtlgnsa7vwfh" path="res://mainmenu.gd" id="1_cmhrf"]
+
+[node name="Mainmenu" type="Node2D" unique_id=504038726]
+script = ExtResource("1_cmhrf")
+
+[node name="Button" type="Button" parent="." unique_id=673182859]
+offset_left = 211.0
+offset_top = 280.0
+offset_right = 420.0
+offset_bottom = 392.0
+text = "play"
+
+[node name="Button2" type="Button" parent="." unique_id=1026912965]
+offset_left = 635.0
+offset_top = 270.0
+offset_right = 844.0
+offset_bottom = 382.0
+text = "play"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

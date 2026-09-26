@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cnjntfjeujmgb"]
+
+[ext_resource type="Script" uid="uid://d0ohdbok6i10e" path="res://timeline.gd" id="1_3127u"]
+
+[node name="Timeline" type="Node2D" unique_id=1036461805]
+script = ExtResource("1_3127u")
+
+[node name="Button" type="Button" parent="." unique_id=1346494105]
+offset_right = 8.0
+offset_bottom = 8.0
