@@ -6,6 +6,8 @@ var mana:int = 1
 var life = -1
 var strength = -1
 
+var marked:int = 0
+
 var a:Vector2 = Vector2(0.,1.)
 var b:Vector2 = Vector2(0.,1.)
 var timestamp = 0
@@ -15,6 +17,8 @@ signal start_hovering(id)
 signal stop_hovering(id)
 signal start_clicking(id)
 signal stop_clicking(id)
+
+signal marky(delta:int)
 
 enum type {ADVISOR,SOLDIER}
 var clas:type = type.SOLDIER
@@ -57,6 +61,11 @@ func assign(m,art,c,s,l,st):
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	scale *= 3
+
+func mark(mark:int):
+	marky.emit(marked - mark)
+	marked = mark
+	$Health.text = str(life) + " " + str(marked)
 
 func transfer(parent: Node2D) -> void:
 	current = state.BATTLEFIELD

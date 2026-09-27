@@ -49,6 +49,13 @@ position = Vector2(1039, 446.00003)
 scale = Vector2(3, 3)
 text = "Pass Turn"
 
+[node name="Incoming" type="Label" parent="." unique_id=776871109]
+offset_left = 425.0
+offset_top = 4.0
+offset_right = 780.0
+offset_bottom = 140.19496
+text = "incoming damage: N"
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="played_card" from="Hand" to="." method="_on_hand_played_card"]
 [connection signal="button_gui_input" from="PassTurnButton" to="." method="_on_pass_turn_button_button_gui_input"]

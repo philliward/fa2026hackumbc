@@ -12,7 +12,10 @@ func _ready() -> void:
 func start_hover(id:int):
 	var p = m.instantiate()
 	print(p.name)
+	p.val = get_child(id).marked
 	get_child(id).add_child(p)
+	p.changeval.connect(get_child(id).mark)
+	get_child(id).marky.connect(get_parent().updatedamage)
 	pass
 
 

@@ -39,6 +39,5 @@ offset_right = 118.0
 offset_bottom = 48.0
 text = "down"
 
-[connection signal="mouse_exited" from="Container" to="." method="_on_container_mouse_exited"]
 [connection signal="pressed" from="Container/Button" to="." method="_increase"]
 [connection signal="pressed" from="Container/Button2" to="." method="_decrease"]

@@ -30,6 +30,7 @@ func _ready() -> void:
 	timestamp = time
 	drawn = 0
 	$PassTurnButton.visible = false
+	$Incoming.visible = false
 	
 	pass # Replace with function body.
 
@@ -58,10 +59,14 @@ func _process(delta: float) -> void:
 				current = state.PLAYER_TURN
 				$PassTurnButton.visible = true
 				$PassTurnButton.modulate[3] = 0.
+				$Incoming.visible = true
+				$Incoming.modulate[3] = 0.
+				$Incoming.text = "incoming damage: " + str(damage)
 				timestamp = time
 			pass
 		state.PLAYER_TURN:
 			$PassTurnButton.modulate[3] = (4.*clamp(time-timestamp,0,1))
+			$Incoming.modulate[3] = (4.*clamp(time-timestamp,0,1))
 			pass
 		state.PLAYER_TURN_END:
 			pass
@@ -100,8 +105,9 @@ func spawn_monarch() -> void:
 	pass
 
 
-func decrement() -> void:
-	damage -= 1
+func updatedamage(delta:int) -> void:
+	damage += delta
+	$Incoming.text = "incoming damage: " + str(damage)
 
 
 func _on_pass_turn_button_button_gui_input(event: InputEvent) -> void:
