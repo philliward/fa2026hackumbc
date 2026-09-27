@@ -1,15 +1,38 @@
 [gd_scene format=3 uid="uid://cruuhcs3hvv1t"]
 
 [ext_resource type="Script" uid="uid://bdq1m1qm5qyri" path="res://combat.gd" id="1_raif2"]
+[ext_resource type="Script" uid="uid://xlga6qf44n7d" path="res://hand.gd" id="2_s0t75"]
+[ext_resource type="Script" uid="uid://cxxr1fmpmj06x" path="res://battlefield.gd" id="3_kx3u1"]
 
 [node name="Combat" type="Node2D" unique_id=47453392]
 script = ExtResource("1_raif2")
 
 [node name="Button" type="Button" parent="." unique_id=405100231]
-offset_left = 184.0
-offset_top = 196.0
-offset_right = 984.0
-offset_bottom = 466.0
-text = "no"
+offset_left = 14.0
+offset_top = 8.0
+offset_right = 197.0
+offset_bottom = 105.0
+text = "draw a card"
+metadata/_edit_use_anchors_ = true
+
+[node name="Hand" type="Node2D" parent="." unique_id=137973367]
+script = ExtResource("2_s0t75")
+
+[node name="Battlefield" type="Node2D" parent="." unique_id=1040650560]
+script = ExtResource("3_kx3u1")
+
+[node name="Label" type="Label" parent="." unique_id=248226700]
+offset_left = 219.0
+offset_top = 20.0
+offset_right = 399.0
+offset_bottom = 108.0
+
+[node name="Button2" type="Button" parent="." unique_id=1151477840]
+offset_left = 971.0
+offset_top = 370.0
+offset_right = 1151.0
+offset_bottom = 492.0
+text = "pass turn"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="played_card" from="Hand" to="." method="_on_hand_played_card"]

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cruuhcs3hvv1t"]
+
+[ext_resource type="Script" uid="uid://bdq1m1qm5qyri" path="res://combat.gd" id="1_raif2"]
+[ext_resource type="Script" uid="uid://xlga6qf44n7d" path="res://hand.gd" id="2_s0t75"]
+[ext_resource type="PackedScene" uid="uid://b0u44v4t8cqmd" path="res://card.tscn" id="3_kx3u1"]
+
+[node name="Combat" type="Node2D" unique_id=47453392]
+script = ExtResource("1_raif2")
+
+[node name="Button" type="Button" parent="." unique_id=405100231]
+offset_left = 14.0
+offset_top = 8.0
+offset_right = 197.0
+offset_bottom = 105.0
+text = "no"
+
+[node name="Hand" type="Node2D" parent="." unique_id=137973367]
+position = Vector2(586, 513)
+script = ExtResource("2_s0t75")
+
+[node name="Card" parent="Hand" unique_id=8864646 instance=ExtResource("3_kx3u1")]
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

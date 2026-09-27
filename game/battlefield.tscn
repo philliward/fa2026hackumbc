@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bj23w5rb43170"]
+
+[ext_resource type="Script" uid="uid://cxxr1fmpmj06x" path="res://battlefield.gd" id="1_hy033"]
+
+[node name="Battlefield" type="Node2D" unique_id=1426846178]
+script = ExtResource("1_hy033")
+
+[node name="Location" type="Node2D" parent="." unique_id=1443725394]

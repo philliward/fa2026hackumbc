@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://b0u44v4t8cqmd"]
+
+[ext_resource type="Script" uid="uid://bbgemglvq78sa" path="res://card.gd" id="1_kikvd"]
+[ext_resource type="Texture2D" uid="uid://bjce8vxegugpg" path="res://assets/queenantcard.png" id="2_rjlel"]
+
+[node name="Card" type="Node2D" unique_id=8864646]
+script = ExtResource("1_kikvd")
+
+[node name="Control" type="Control" parent="." unique_id=194986757]
+z_index = -4
+layout_mode = 3
+anchors_preset = 0
+offset_left = -20.0
+offset_top = -30.0
+offset_right = 20.0
+offset_bottom = 30.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1234758264]
+position = Vector2(-0.49999905, 9.536743e-07)
+scale = Vector2(0.037, 0.04)
+texture = ExtResource("2_rjlel")
+
+[node name="Label" type="Label" parent="." unique_id=1551810764]
+offset_left = -17.0
+offset_top = -27.0
+offset_right = -3.0
+offset_bottom = -4.0
+
+[connection signal="gui_input" from="Control" to="." method="_on_control_gui_input"]
+[connection signal="mouse_entered" from="Control" to="." method="_on_control_mouse_entered"]
+[connection signal="mouse_exited" from="Control" to="." method="_on_control_mouse_exited"]
