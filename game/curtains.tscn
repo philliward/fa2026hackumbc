@@ -14,16 +14,16 @@ gradient = SubResource("Gradient_lnhy8")
 script = ExtResource("1_lnhy8")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=453572588]
-z_index = 11
+z_index = 4096
 position = Vector2(-623, -429)
 texture = ExtResource("2_d4hdf")
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1908500845]
-z_index = 10
+z_index = 4096
 position = Vector2(-1066, 232)
 texture = ExtResource("2_d4hdf")
 
 [node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1739102666]
-z_index = 5
+z_index = 4095
 position = Vector2(-135, 10)
 texture = SubResource("GradientTexture2D_h3tk7")
