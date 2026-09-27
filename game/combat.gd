@@ -7,6 +7,8 @@ signal exit
 
 const STARTING_HAND:int = 7
 
+var damage:int = 10
+
 var time: float = 0
 var timestamp: float = 0
 var deck = []
@@ -27,6 +29,7 @@ func _ready() -> void:
 	current = state.STALL
 	timestamp = time
 	drawn = 0
+	$PassTurnButton.visible = false
 	
 	pass # Replace with function body.
 
@@ -53,8 +56,12 @@ func _process(delta: float) -> void:
 					spawn_monarch()
 			if drawn >= STARTING_HAND:
 				current = state.PLAYER_TURN
+				$PassTurnButton.visible = true
+				$PassTurnButton.modulate[3] = 0.
+				timestamp = time
 			pass
 		state.PLAYER_TURN:
+			$PassTurnButton.modulate[3] = (4.*clamp(time-timestamp,0,1))
 			pass
 		state.PLAYER_TURN_END:
 			pass
@@ -93,9 +100,14 @@ func spawn_monarch() -> void:
 	pass
 
 
+func decrement() -> void:
+	damage -= 1
+
+
 func _on_pass_turn_button_button_gui_input(event: InputEvent) -> void:
 	if event.is_action_pressed("click"):
 		if current == state.PLAYER_TURN:
 			$PassTurnButton.visible = false
 			current = state.PLAYER_TURN_END
+			$Cabinet.connectchildren()
 	pass # Replace with function body.

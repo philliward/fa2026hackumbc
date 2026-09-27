@@ -13,7 +13,7 @@ const curtains = preload("res://curtains.tscn")
 func _ready() -> void:
 	$Combat.visible = false
 	$Mainmenu.visible = true
-	$Timeline.visible = false
+	#$Timeline.visible = false
 	DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED)
 	pass # Replace with function body.
 

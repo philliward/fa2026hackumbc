@@ -1,11 +1,24 @@
 extends Node2D
 
 const c = preload("res://card.tscn")
+const m = preload("res://picker.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	position = get_viewport_rect().get_center() * Vector2(1,0.9)
 	pass # Replace with function body.
+
+
+func start_hover(id:int):
+	var p = m.instantiate()
+	print(p.name)
+	get_child(id).add_child(p)
+	pass
+
+
+func connectchildren() -> void:
+	for child in get_children():
+		child.start_hovering.connect(start_hover)
 
 
 func distribute() -> void:

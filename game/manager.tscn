@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://viw0d1xgv8ko" path="res://manager.gd" id="1_453op"]
 [ext_resource type="PackedScene" uid="uid://bywwp6gfw1qkh" path="res://mainmenu.tscn" id="2_rdwjh"]
 [ext_resource type="PackedScene" uid="uid://cruuhcs3hvv1t" path="res://combat.tscn" id="3_srgm2"]
-[ext_resource type="PackedScene" uid="uid://cnjntfjeujmgb" path="res://timeline.tscn" id="4_srgm2"]
 
 [node name="Node2D" type="Node2D" unique_id=539679218]
 script = ExtResource("1_453op")
@@ -11,8 +10,6 @@ script = ExtResource("1_453op")
 [node name="Combat" parent="." unique_id=47453392 instance=ExtResource("3_srgm2")]
 
 [node name="Mainmenu" parent="." unique_id=504038726 instance=ExtResource("2_rdwjh")]
-
-[node name="Timeline" parent="." unique_id=1036461805 instance=ExtResource("4_srgm2")]
 
 [connection signal="exit" from="Combat" to="." method="_on_combat_exit"]
 [connection signal="combat" from="Mainmenu" to="." method="_on_mainmenu_combat"]

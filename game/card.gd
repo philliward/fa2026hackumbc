@@ -11,8 +11,8 @@ var b:Vector2 = Vector2(0.,1.)
 var timestamp = 0
 var time = 0
 
-signal start_hovering
-signal stop_hovering
+signal start_hovering(id)
+signal stop_hovering(id)
 signal start_clicking(id)
 signal stop_clicking(id)
 
@@ -89,17 +89,21 @@ func _process(delta: float) -> void:
 func _on_control_mouse_entered() -> void:
 	if current != state.BATTLEFIELD and time - timestamp > .5:
 		freeze()
-		start_hovering.emit()
+		start_hovering.emit(get_index())
 		b[1] = 1.06
 		timestamp = time
+	elif current == state.BATTLEFIELD:
+		start_hovering.emit(get_index())
 
 
 func _on_control_mouse_exited() -> void:
 	if current != state.BATTLEFIELD:
 		freeze()
-		stop_hovering.emit()
+		stop_hovering.emit(get_index())
 		b[1] = 1.0
 		timestamp = time
+	elif current == state.BATTLEFIELD:
+		stop_hovering.emit(get_index())
 
 func pos_to_rad(pos:Vector2) -> Vector2:
 	var d = get_viewport_rect().get_center() * Vector2(1,3) - pos

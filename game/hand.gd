@@ -46,12 +46,18 @@ func release_card(id) -> void:
 func add(cards) -> void:
 	for card in cards:
 		var c:Card = Player.newcard.instantiate()
-		if card == 1:
-			c.assign(3,"kingbullcard.png",c.type.ADVISOR,c.state.HOVERING,2,-1)
-		elif randf() > 0.5:
+		if randf() > 0.8:
 			c.assign(2,"bullcard.png",c.type.ADVISOR,c.state.HOVERING,3,-1)
+		elif randf() > 0.8:
+			c.assign(1,"queenantcard.png",c.type.ADVISOR,c.state.HOVERING,1,-1)
+		elif randf() > 0.8:
+			c.assign(1,"lioncard.png",c.type.SOLDIER,c.state.HOVERING,1,2)
+		elif randf() > 0.8:
+			c.assign(1,"lion-b_card.png",c.type.SOLDIER,c.state.HOVERING,2,2)
+		elif randf() > 0.8:
+			c.assign(1,"ant-b_card.png",c.type.SOLDIER,c.state.HOVERING,1,1)
 		else:
-			c.assign(1,"queenantcard.png",c.type.SOLDIER,c.state.HOVERING,1,2)
+			c.assign(1,"ant-c_card.png",c.type.SOLDIER,c.state.HOVERING,1,1)
 		c.start_clicking.connect(click_card)
 		c.stop_clicking.connect(release_card)
 		c.b = Vector2(40,1.2)
