@@ -3,13 +3,27 @@
 [ext_resource type="Script" uid="uid://b8u5exiqdxrjq" path="res://curtains.gd" id="1_lnhy8"]
 [ext_resource type="Texture2D" uid="uid://cpm2eqilfapn5" path="res://assets/curtain_PNG47.png" id="2_d4hdf"]
 
+[sub_resource type="Gradient" id="Gradient_lnhy8"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_h3tk7"]
+gradient = SubResource("Gradient_lnhy8")
+
 [node name="Curtains" type="Node2D" unique_id=1463042826]
 script = ExtResource("1_lnhy8")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=453572588]
+z_index = 11
 position = Vector2(-623, -429)
 texture = ExtResource("2_d4hdf")
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1908500845]
+z_index = 10
 position = Vector2(-1066, 232)
 texture = ExtResource("2_d4hdf")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1739102666]
+z_index = 5
+position = Vector2(-135, 10)
+texture = SubResource("GradientTexture2D_h3tk7")

@@ -23,6 +23,7 @@ func _process(delta: float) -> void:
 						child.b = get_child(ch).b
 						get_child(ch).b = t
 						
+						
 						get_child(ch).timestamp = get_child(ch).time
 						child.timestamp = child.time
 	pass
@@ -39,7 +40,8 @@ func release_card(id) -> void:
 		state.CLICKING:
 			current = state.HOVERING
 			ch = id
-			played_card.emit(get_child(id))
+			if get_parent().can_interact():
+				played_card.emit(get_child(id))
 			add([])
 	pass
 
@@ -47,11 +49,11 @@ func add(cards) -> void:
 	for card in cards:
 		var c:Card = new.instantiate()
 		if card == 1:
-			c.find_child("Sprite2D").texture = ImageTexture.create_from_image(Image.load_from_file("res://assets/kingbullcard.png"))
-			c.clas = c.type.ADVISOR
+			c.assign(3,"kingbullcard.png",c.type.ADVISOR)
 		elif randf() > 0.5:
-			c.find_child("Sprite2D").texture = ImageTexture.create_from_image(Image.load_from_file("res://assets/bullcard.png"))
-			c.clas = c.type.ADVISOR
+			c.assign(2,"bullcard.png",c.type.ADVISOR)
+		else:
+			c.assign(1,"queenantcard.png",c.type.SOLDIER)
 		c.start_clicking.connect(click_card)
 		c.stop_clicking.connect(release_card)
 		c.b = Vector2(40,1.2)

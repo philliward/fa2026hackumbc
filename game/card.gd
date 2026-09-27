@@ -4,8 +4,8 @@ extends Node2D
 # CARD INFORMATION
 var mana:int = 1
 
-var a:Vector2 = Vector2(0,1)
-var b:Vector2 = Vector2(0,1)
+var a:Vector2 = Vector2(0.,1.)
+var b:Vector2 = Vector2(0.,1.)
 var timestamp = 0
 var time = 0
 
@@ -34,13 +34,16 @@ func set_theta(inp):
 	timestamp = time
 	pass
 
-func assign(data):
+func assign(m,art,c):
+	$Sprite2D.texture = ImageTexture.create_from_image(Image.load_from_file("res://assets/" + art))
+	mana = m
+	clas = c
+	$Label.text = str(mana)
 	pass
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	scale *= 3
-	$Label.text = str(mana)
 
 func transfer(parent: Node2D) -> void:
 	current = state.BATTLEFIELD

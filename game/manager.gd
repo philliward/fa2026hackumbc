@@ -30,7 +30,7 @@ func _process(delta: float) -> void:
 				$Mainmenu.visible = false
 				$Combat.visible = true
 				$Combat.enter()
-				$Combat.find_child("FightMusic").play()
+				#$Combat.find_child("FightMusic").play()
 				$Mainmenu.find_child("MenuMusic").stop()
 	pass
 

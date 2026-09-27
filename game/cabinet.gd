@@ -1,10 +1,12 @@
 extends Node2D
 
+const c = preload("res://card.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	position = get_viewport_rect().get_center() * Vector2(1,0.9)
 	pass # Replace with function body.
+
 
 func distribute() -> void:
 	var i = -0.5

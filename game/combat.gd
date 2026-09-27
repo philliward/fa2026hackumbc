@@ -2,6 +2,10 @@ extends Node2D
 
 signal exit
 
+
+const example = preload("res://card.tscn")
+
+
 const STARTING_HAND:int = 7
 
 var time: float = 0
@@ -11,7 +15,11 @@ var drawn = 0
 enum state {STALL,BEGIN,PLAYER_TURN,PLAYER_TURN_END,ENEMY_TURN,ENEMY_TURN_END}
 var current:state = state.STALL
 
-var mana = 8
+
+func can_interact() -> bool:
+	return current == state.PLAYER_TURN or current == state.ENEMY_TURN_END
+	
+var mana = 9999
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -55,6 +63,7 @@ func _process(delta: float) -> void:
 
 
 func _on_button_pressed() -> void:
+	spawn_monarch()
 	$Hand.add([0])
 	#exit.emit()
 	pass # Replace with function body.
@@ -69,6 +78,13 @@ func _on_hand_played_card(card: Card) -> void:
 		$Battlefield.distribute()
 		$Cabinet.distribute()
 	pass # Replace with function body.
+
+
+func spawn_monarch() -> void:
+	var child:Card = example.instantiate()
+	child.assign(6,"kingbullcard.png",child.type.ADVISOR)
+	$Cabinet.add_child(child)
+	pass
 
 
 func _on_button_2_pressed() -> void:

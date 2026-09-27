@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://b0u44v4t8cqmd"]
 
 [ext_resource type="Script" uid="uid://bbgemglvq78sa" path="res://card.gd" id="1_kikvd"]
-[ext_resource type="Texture2D" uid="uid://bjce8vxegugpg" path="res://assets/queenantcard.png" id="2_rjlel"]
 
 [node name="Card" type="Node2D" unique_id=8864646]
 script = ExtResource("1_kikvd")
@@ -18,7 +17,6 @@ offset_bottom = 30.0
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1234758264]
 position = Vector2(-0.49999905, 9.536743e-07)
 scale = Vector2(0.037, 0.04)
-texture = ExtResource("2_rjlel")
 
 [node name="Label" type="Label" parent="." unique_id=1551810764]
 offset_left = -17.0
