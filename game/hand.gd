@@ -46,12 +46,19 @@ func release_card(id) -> void:
 func add(cards) -> void:
 	for card in cards:
 		var c:Card = new.instantiate()
+		if card == 1:
+			c.find_child("Sprite2D").texture = ImageTexture.create_from_image(Image.load_from_file("res://assets/kingbullcard.png"))
+			c.clas = c.type.ADVISOR
+		elif randf() > 0.5:
+			c.find_child("Sprite2D").texture = ImageTexture.create_from_image(Image.load_from_file("res://assets/bullcard.png"))
+			c.clas = c.type.ADVISOR
 		c.start_clicking.connect(click_card)
 		c.stop_clicking.connect(release_card)
 		c.b = Vector2(40,1.2)
 		c.a = c.b
 		c.b[1] = 1
 		add_child(c)
+		c._process(0)
 	var r:float = get_child_count()
 	var i = -0.5
 	for child:Card in get_children():

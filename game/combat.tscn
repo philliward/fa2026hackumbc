@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://bdq1m1qm5qyri" path="res://combat.gd" id="1_raif2"]
 [ext_resource type="Script" uid="uid://xlga6qf44n7d" path="res://hand.gd" id="2_s0t75"]
 [ext_resource type="Script" uid="uid://cxxr1fmpmj06x" path="res://battlefield.gd" id="3_kx3u1"]
+[ext_resource type="Script" uid="uid://j6g8ck0vg50n" path="res://cabinet.gd" id="4_ga4lu"]
+[ext_resource type="AudioStream" uid="uid://bwpg4pm2cfpak" path="res://assets/fight! v544pm.mp3" id="5_u30h6"]
 
 [node name="Combat" type="Node2D" unique_id=47453392]
 script = ExtResource("1_raif2")
@@ -34,5 +36,12 @@ offset_right = 1151.0
 offset_bottom = 492.0
 text = "pass turn"
 
+[node name="Cabinet" type="Node2D" parent="." unique_id=245174301]
+script = ExtResource("4_ga4lu")
+
+[node name="FightMusic" type="AudioStreamPlayer" parent="." unique_id=1824599897]
+stream = ExtResource("5_u30h6")
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="played_card" from="Hand" to="." method="_on_hand_played_card"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

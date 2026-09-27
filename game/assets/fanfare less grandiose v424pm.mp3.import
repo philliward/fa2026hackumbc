@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://qtlqa25mi00r"
+path="res://.godot/imported/fanfare less grandiose v424pm.mp3-696f2112c656f2162dfaa8990b1bc25b.mp3str"
+
+[deps]
+
+source_file="res://assets/fanfare less grandiose v424pm.mp3"
+dest_files=["res://.godot/imported/fanfare less grandiose v424pm.mp3-696f2112c656f2162dfaa8990b1bc25b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

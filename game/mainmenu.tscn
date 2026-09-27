@@ -1,23 +1,49 @@
 [gd_scene format=3 uid="uid://bywwp6gfw1qkh"]
 
 [ext_resource type="Script" uid="uid://cqtlgnsa7vwfh" path="res://mainmenu.gd" id="1_cmhrf"]
+[ext_resource type="Texture2D" uid="uid://dk2yby4g38gfx" path="res://assets/conceptant.png" id="2_wgsso"]
+[ext_resource type="Script" uid="uid://m2r2xd8ovejy" path="res://conceptant.gd" id="3_igs2m"]
+[ext_resource type="Script" uid="uid://cgfvjoxil4l43" path="res://sprite_2d.gd" id="4_igs2m"]
+[ext_resource type="AudioStream" uid="uid://qtlqa25mi00r" path="res://assets/fanfare less grandiose v424pm.mp3" id="5_3pujl"]
+
+[sub_resource type="Gradient" id="Gradient_3pujl"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.85490197, 0.84313726, 0.8117647, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_h3tk7"]
+gradient = SubResource("Gradient_3pujl")
 
 [node name="Mainmenu" type="Node2D" unique_id=504038726]
 script = ExtResource("1_cmhrf")
 
 [node name="Button" type="Button" parent="." unique_id=673182859]
-offset_left = 211.0
-offset_top = 280.0
-offset_right = 420.0
-offset_bottom = 392.0
-text = "play"
+offset_left = 679.0
+offset_top = 166.0
+offset_right = 888.0
+offset_bottom = 278.0
+text = "combat"
 
 [node name="Button2" type="Button" parent="." unique_id=1026912965]
-offset_left = 635.0
-offset_top = 270.0
-offset_right = 844.0
-offset_bottom = 382.0
+offset_left = 681.0
+offset_top = 367.0
+offset_right = 890.0
+offset_bottom = 479.0
 text = "play"
+
+[node name="Conceptant" type="Sprite2D" parent="." unique_id=996479028]
+texture = ExtResource("2_wgsso")
+script = ExtResource("3_igs2m")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=22860748]
+z_index = -10
+position = Vector2(570, 321.625)
+scale = Vector2(4.46875, 644.75)
+texture = SubResource("GradientTexture1D_h3tk7")
+script = ExtResource("4_igs2m")
+
+[node name="MenuMusic" type="AudioStreamPlayer" parent="." unique_id=2052421305]
+stream = ExtResource("5_3pujl")
+autoplay = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

@@ -3,7 +3,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	position = get_viewport_rect().get_center() * Vector2(1,0.5)
+	position = get_viewport_rect().get_center() * Vector2(1,0.9)
 	pass # Replace with function body.
 
 func distribute() -> void:
@@ -18,5 +18,5 @@ func distribute() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	position = get_viewport_rect().get_center() * Vector2(1,0.5)
+	position = get_viewport_rect().get_center() * Vector2(1,0.9)
 	pass

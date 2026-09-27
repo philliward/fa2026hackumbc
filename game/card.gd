@@ -14,6 +14,9 @@ signal stop_hovering
 signal start_clicking(id)
 signal stop_clicking(id)
 
+enum type {ADVISOR,SOLDIER}
+var clas:type = type.SOLDIER
+
 enum state {HOVERING,CLICKING,BATTLEFIELD}
 var current:state = state.HOVERING
 

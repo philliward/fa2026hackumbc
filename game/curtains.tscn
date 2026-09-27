@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cplhk5jb0taci"]
+
+[ext_resource type="Script" uid="uid://b8u5exiqdxrjq" path="res://curtains.gd" id="1_lnhy8"]
+[ext_resource type="Texture2D" uid="uid://cpm2eqilfapn5" path="res://assets/curtain_PNG47.png" id="2_d4hdf"]
+
+[node name="Curtains" type="Node2D" unique_id=1463042826]
+script = ExtResource("1_lnhy8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=453572588]
+position = Vector2(-623, -429)
+texture = ExtResource("2_d4hdf")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1908500845]
+position = Vector2(-1066, 232)
+texture = ExtResource("2_d4hdf")
