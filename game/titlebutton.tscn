@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://4405d2usigmg"]
+
+[ext_resource type="Texture2D" uid="uid://byk6qich8y3dw" path="res://assets/Blank_Button.png" id="1_5gwsq"]
+[ext_resource type="Script" uid="uid://blmx3u0ghi3yd" path="res://titlebutton.gd" id="1_ad2cu"]
+[ext_resource type="Script" uid="uid://wjoqmvmyco7q" path="res://bannerbutton.gd" id="1_dqu1h"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dqu1h"]
+font_size = 10
+font_color = Color(0.6286668, 0.246, 0.82, 1)
+
+[node name="Node2D" type="Node2D" unique_id=1395856708]
+script = ExtResource("1_dqu1h")
+
+[node name="BannerButton" type="Node2D" parent="." unique_id=1668427797]
+script = ExtResource("1_ad2cu")
+
+[node name="BlankButton" type="Sprite2D" parent="BannerButton" unique_id=1223942311]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_5gwsq")
+
+[node name="Control" type="Container" parent="BannerButton" unique_id=1422782808]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -50.0
+offset_top = -20.0
+offset_right = 50.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="BannerButton" unique_id=1859566363]
+offset_left = -100.0
+offset_top = -9.0
+offset_right = 100.0
+offset_bottom = 21.0
+text = "b567irgmfty"
+label_settings = SubResource("LabelSettings_dqu1h")
+horizontal_alignment = 1
+
+[connection signal="gui_input" from="BannerButton" to="." method="_on_banner_button_gui_input"]
+[connection signal="gui_input" from="BannerButton/Control" to="BannerButton" method="_on_control_gui_input"]
+[connection signal="mouse_entered" from="BannerButton/Control" to="BannerButton" method="_on_control_mouse_entered"]
+[connection signal="mouse_exited" from="BannerButton/Control" to="BannerButton" method="_on_control_mouse_exited"]

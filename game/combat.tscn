@@ -5,6 +5,8 @@
 [ext_resource type="Script" uid="uid://cxxr1fmpmj06x" path="res://battlefield.gd" id="3_kx3u1"]
 [ext_resource type="Script" uid="uid://j6g8ck0vg50n" path="res://cabinet.gd" id="4_ga4lu"]
 [ext_resource type="AudioStream" uid="uid://bwpg4pm2cfpak" path="res://assets/fight! v544pm.mp3" id="5_u30h6"]
+[ext_resource type="Texture2D" uid="uid://dpvq5r5sj3wmu" path="res://assets/Combat_Background.png" id="6_fvoc2"]
+[ext_resource type="PackedScene" uid="uid://4405d2usigmg" path="res://titlebutton.tscn" id="7_v7dqf"]
 
 [node name="Combat" type="Node2D" unique_id=47453392]
 script = ExtResource("1_raif2")
@@ -29,19 +31,24 @@ offset_top = 20.0
 offset_right = 399.0
 offset_bottom = 108.0
 
-[node name="Button2" type="Button" parent="." unique_id=1151477840]
-offset_left = 971.0
-offset_top = 370.0
-offset_right = 1151.0
-offset_bottom = 492.0
-text = "pass turn"
-
 [node name="Cabinet" type="Node2D" parent="." unique_id=245174301]
 script = ExtResource("4_ga4lu")
 
 [node name="FightMusic" type="AudioStreamPlayer" parent="." unique_id=1824599897]
 stream = ExtResource("5_u30h6")
 
+[node name="CombatBackground" type="Sprite2D" parent="." unique_id=882771916]
+z_index = -1000
+position = Vector2(-316, -8)
+scale = Vector2(0.123819515, 0.2338403)
+texture = ExtResource("6_fvoc2")
+
+[node name="PassTurnButton" parent="." unique_id=1395856708 instance=ExtResource("7_v7dqf")]
+z_index = 200
+position = Vector2(1039, 446.00003)
+scale = Vector2(3, 3)
+text = "Pass Turn"
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="played_card" from="Hand" to="." method="_on_hand_played_card"]
-[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="button_gui_input" from="PassTurnButton" to="." method="_on_pass_turn_button_button_gui_input"]

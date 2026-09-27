@@ -3,6 +3,8 @@ extends Node2D
 
 # CARD INFORMATION
 var mana:int = 1
+var life = -1
+var strength = -1
 
 var a:Vector2 = Vector2(0.,1.)
 var b:Vector2 = Vector2(0.,1.)
@@ -34,11 +36,22 @@ func set_theta(inp):
 	timestamp = time
 	pass
 
-func assign(m,art,c):
+func assign(m,art,c,s,l,st):
 	$Sprite2D.texture = ImageTexture.create_from_image(Image.load_from_file("res://assets/" + art))
 	mana = m
 	clas = c
-	$Label.text = str(mana)
+	life = l
+	current = s
+	strength = st
+	$Cost.text = str(mana)
+	$Health.text = str(life) if life >=0 else ""
+	$Strength.text = str(strength) if strength >=0 else ""
+	$HealthSprite.visible = life>=0
+	$StrengthSprite.visible = strength>=0
+	
+	$HealthSprite.position[0] = 14 if strength >= 0 else 1
+	$Health.position[0] = 11 if strength >= 0 else -2
+	
 	pass
 
 # Called when the node enters the scene tree for the first time.

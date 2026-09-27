@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://b0u44v4t8cqmd"]
 
 [ext_resource type="Script" uid="uid://bbgemglvq78sa" path="res://card.gd" id="1_kikvd"]
+[ext_resource type="Texture2D" uid="uid://ccf5u4jnw0sb4" path="res://assets/bullcard.png" id="2_rjlel"]
+[ext_resource type="Texture2D" uid="uid://cff2a8nj3ponv" path="res://assets/Resource-Cost-Shield.png" id="3_e484p"]
+[ext_resource type="Texture2D" uid="uid://btfwsm2aok1n3" path="res://assets/Health.png" id="4_fpac0"]
 
 [node name="Card" type="Node2D" unique_id=8864646]
 script = ExtResource("1_kikvd")
@@ -17,12 +20,50 @@ offset_bottom = 30.0
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1234758264]
 position = Vector2(-0.49999905, 9.536743e-07)
 scale = Vector2(0.037, 0.04)
+texture = ExtResource("2_rjlel")
 
-[node name="Label" type="Label" parent="." unique_id=1551810764]
+[node name="Cost" type="Label" parent="." unique_id=1551810764]
+z_index = 1
+offset_left = -16.0
+offset_top = -25.714287
+offset_right = -6.0
+offset_bottom = -2.7142868
+scale = Vector2(0.5, 0.5)
+text = "1"
+horizontal_alignment = 1
+
+[node name="CostSprite" type="Sprite2D" parent="." unique_id=1054785967]
+position = Vector2(-14.000001, -20)
+scale = Vector2(0.036474172, 0.0364741)
+texture = ExtResource("3_e484p")
+
+[node name="HealthSprite" type="Sprite2D" parent="." unique_id=1938740395]
+position = Vector2(1, 27)
+scale = Vector2(0.04863223, 0.0486322)
+texture = ExtResource("4_fpac0")
+
+[node name="Health" type="Label" parent="." unique_id=2125889454]
+offset_left = -2.0
+offset_top = 22.0
+offset_right = 8.0
+offset_bottom = 45.0
+scale = Vector2(0.5, 0.5)
+text = "1"
+horizontal_alignment = 1
+
+[node name="StrengthSprite" type="Sprite2D" parent="." unique_id=1042411537]
+position = Vector2(-14.000005, 27)
+scale = Vector2(0.04863223, 0.0486322)
+texture = ExtResource("4_fpac0")
+
+[node name="Strength" type="Label" parent="." unique_id=416142338]
 offset_left = -17.0
-offset_top = -27.0
-offset_right = -3.0
-offset_bottom = -4.0
+offset_top = 22.0
+offset_right = -7.0
+offset_bottom = 45.0
+scale = Vector2(0.5, 0.5)
+text = "1"
+horizontal_alignment = 1
 
 [connection signal="gui_input" from="Control" to="." method="_on_control_gui_input"]
 [connection signal="mouse_entered" from="Control" to="." method="_on_control_mouse_entered"]

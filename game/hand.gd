@@ -1,7 +1,5 @@
 extends Node2D
 
-const new = preload("res://card.tscn")
-
 signal played_card(card:Card)
 
 enum state {HOVERING,CLICKING}
@@ -26,8 +24,8 @@ func _process(delta: float) -> void:
 						
 						get_child(ch).timestamp = get_child(ch).time
 						child.timestamp = child.time
-	pass
-	
+
+
 func click_card(id) -> void:
 	match current:
 		state.HOVERING:
@@ -44,16 +42,16 @@ func release_card(id) -> void:
 				played_card.emit(get_child(id))
 			add([])
 	pass
-
+	
 func add(cards) -> void:
 	for card in cards:
-		var c:Card = new.instantiate()
+		var c:Card = Player.newcard.instantiate()
 		if card == 1:
-			c.assign(3,"kingbullcard.png",c.type.ADVISOR)
+			c.assign(3,"kingbullcard.png",c.type.ADVISOR,c.state.HOVERING,2,-1)
 		elif randf() > 0.5:
-			c.assign(2,"bullcard.png",c.type.ADVISOR)
+			c.assign(2,"bullcard.png",c.type.ADVISOR,c.state.HOVERING,3,-1)
 		else:
-			c.assign(1,"queenantcard.png",c.type.SOLDIER)
+			c.assign(1,"queenantcard.png",c.type.SOLDIER,c.state.HOVERING,1,2)
 		c.start_clicking.connect(click_card)
 		c.stop_clicking.connect(release_card)
 		c.b = Vector2(40,1.2)

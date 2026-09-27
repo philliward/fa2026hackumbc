@@ -1,5 +1,7 @@
 extends Node2D
 
+const newcard = preload("res://card.tscn")
+
 var deck = []
 
 var cards = []

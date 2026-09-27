@@ -5,6 +5,13 @@ extends Node2D
 func _ready() -> void:
 	position = get_viewport_rect().get_center() * Vector2(1,0.5)
 	pass # Replace with function body.
+	pass
+
+
+func add(child:Card) -> void:
+	add_child(child)
+	child.current = child.state.BATTLEFIELD
+	distribute()
 
 func distribute() -> void:
 	var i = -0.5
