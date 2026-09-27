@@ -1,10 +1,109 @@
 [gd_scene format=3 uid="uid://cnjntfjeujmgb"]
 
 [ext_resource type="Script" uid="uid://d0ohdbok6i10e" path="res://timeline.gd" id="1_3127u"]
+[ext_resource type="PackedScene" uid="uid://bcsi4eva0so8g" path="res://levelnode.tscn" id="2_18enc"]
 
-[node name="Timeline" type="Node2D" unique_id=1036461805]
+[node name="timeline" type="Node2D" unique_id=1324637517]
 script = ExtResource("1_3127u")
 
-[node name="Button" type="Button" parent="." unique_id=1346494105]
-offset_right = 8.0
-offset_bottom = 8.0
+[node name="background" type="Sprite2D" parent="." unique_id=1427026947]
+scale = Vector2(312.92856, -481.42725)
+
+[node name="startpath" type="Line2D" parent="." unique_id=527756415]
+points = PackedVector2Array(115, 273, 275, 273)
+
+[node name="paths" type="Node2D" parent="." unique_id=509425220]
+
+[node name="path2" type="Line2D" parent="paths" unique_id=1171185621]
+points = PackedVector2Array(270, 273, 386, 175, 600, 173, 853, 175)
+
+[node name="p2lvl" type="Control" parent="paths/path2" unique_id=1359452317]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="lvl04" parent="paths/path2/p2lvl" unique_id=2118185194 instance=ExtResource("2_18enc")]
+layout_mode = 1
+offset_left = 368.0
+offset_top = 155.0
+offset_right = 368.0
+offset_bottom = 155.0
+
+[node name="lvl05" parent="paths/path2/p2lvl" unique_id=173972157 instance=ExtResource("2_18enc")]
+layout_mode = 1
+offset_left = 579.0
+offset_top = 154.0
+offset_right = 579.0
+offset_bottom = 154.0
+
+[node name="lvl06" parent="paths/path2/p2lvl" unique_id=1329056290 instance=ExtResource("2_18enc")]
+layout_mode = 1
+offset_left = 821.0
+offset_top = 155.0
+offset_right = 821.0
+offset_bottom = 155.0
+
+[node name="path3" type="Line2D" parent="paths" unique_id=1462756768]
+position = Vector2(-1, 6)
+points = PackedVector2Array(271, 267, 385, 360, 591, 361, 844, 360)
+
+[node name="p3lvl" type="Control" parent="paths/path3" unique_id=1177110982]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="lvl07" parent="paths/path3/p3lvl" unique_id=2081310872 instance=ExtResource("2_18enc")]
+layout_mode = 1
+offset_left = 370.0
+offset_top = 338.0
+offset_right = 370.0
+offset_bottom = 338.0
+
+[node name="lvl08" parent="paths/path3/p3lvl" unique_id=636725482 instance=ExtResource("2_18enc")]
+layout_mode = 1
+offset_left = 581.0
+offset_top = 340.0
+offset_right = 581.0
+offset_bottom = 340.0
+
+[node name="lvl09" parent="paths/path3/p3lvl" unique_id=828917509 instance=ExtResource("2_18enc")]
+layout_mode = 1
+offset_left = 820.0
+offset_top = 342.0
+offset_right = 820.0
+offset_bottom = 342.0
+
+[node name="path1" type="Line2D" parent="paths" unique_id=1406499524]
+points = PackedVector2Array(271, 273, 393, 273, 598, 273, 843, 272)
+
+[node name="p1lvl" type="Control" parent="paths/path1" unique_id=1223519950]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -2.0
+offset_right = 40.0
+offset_bottom = 38.0
+
+[node name="lvl01" parent="paths/path1/p1lvl" unique_id=1153969983 instance=ExtResource("2_18enc")]
+layout_mode = 1
+offset_left = 374.0
+offset_top = 255.0
+offset_right = 374.0
+offset_bottom = 255.0
+
+[node name="lvl02" parent="paths/path1/p1lvl" unique_id=1367552668 instance=ExtResource("2_18enc")]
+layout_mode = 1
+offset_left = 580.0
+offset_top = 252.0
+offset_right = 580.0
+offset_bottom = 252.0
+
+[node name="lvl03" parent="paths/path1/p1lvl" unique_id=1049477629 instance=ExtResource("2_18enc")]
+layout_mode = 1
+offset_left = 818.0
+offset_top = 253.0
+offset_right = 818.0
+offset_bottom = 253.0
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=888335689]
