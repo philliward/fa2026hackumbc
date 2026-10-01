@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://cvwrfokt5v8ue"]
+
+[ext_resource type="Script" uid="uid://d1ug27kcliris" path="res://intro.gd" id="1_wtcfe"]
+
+[node name="Intro" type="Node2D" unique_id=907780336]
+script = ExtResource("1_wtcfe")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=557897176]
+offset_left = -739.0
+offset_top = 64.0
+offset_right = -96.0
+offset_bottom = 435.0
+text = "in those ancient days, three kingdoms battled. the plants spread their roots and thorns,  tearing at flesh and hypae. the fungi blew their toxic spores, poisoning the waters and fields. animals slashed their claws and gnashed their teeth, scouring the earth bare. 
+
+idfk
+
+but with their minds bent to war, the loss of the enemy to their front only drew their eyes to the enemy at either side. the lion's jaws met the falcon's wing, and once steadfast comrades turned base rivals
+
+you are different. esteemed monarch, you can unite them, through cunning or through force"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=1382221841]
+offset_left = 324.0
+offset_top = 183.0
+offset_right = 966.0
+offset_bottom = 580.0
+text = "the animal kingdom is in chaos. idk. something here
+
+you are different. you can save them, monarch
+
+through cunning, or through force"
+
+[node name="Button" type="Button" parent="." unique_id=348993817]
+offset_left = 371.0
+offset_top = 372.0
+offset_right = 637.0
+offset_bottom = 531.0
+text = "next"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

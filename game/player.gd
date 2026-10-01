@@ -6,6 +6,9 @@ var deck = []
 
 var cards = []
 
+func fit(point:Vector2)->Vector2:
+	return point*get_viewport_rect().size
+
 func space(zone:Rect2,point:Vector2)->bool:
 	var a:Rect2 = get_viewport_rect()
 	var b:Rect2

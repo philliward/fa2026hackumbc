@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://xlga6qf44n7d" path="res://hand.gd" id="2_s0t75"]
 [ext_resource type="Script" uid="uid://cxxr1fmpmj06x" path="res://battlefield.gd" id="3_kx3u1"]
 [ext_resource type="Script" uid="uid://j6g8ck0vg50n" path="res://cabinet.gd" id="4_ga4lu"]
+[ext_resource type="Script" uid="uid://dt108flm1m4yb" path="res://card_zones.gd" id="5_syqip"]
 [ext_resource type="AudioStream" uid="uid://bwpg4pm2cfpak" path="res://assets/fight! v544pm.mp3" id="5_u30h6"]
 [ext_resource type="Texture2D" uid="uid://dpvq5r5sj3wmu" path="res://assets/Combat_Background.png" id="6_fvoc2"]
 [ext_resource type="PackedScene" uid="uid://4405d2usigmg" path="res://titlebutton.tscn" id="7_v7dqf"]
@@ -19,20 +20,11 @@ offset_bottom = 105.0
 text = "draw a card"
 metadata/_edit_use_anchors_ = true
 
-[node name="Hand" type="Node2D" parent="." unique_id=137973367]
-script = ExtResource("2_s0t75")
-
-[node name="Battlefield" type="Node2D" parent="." unique_id=1040650560]
-script = ExtResource("3_kx3u1")
-
 [node name="Label" type="Label" parent="." unique_id=248226700]
 offset_left = 219.0
 offset_top = 20.0
 offset_right = 399.0
 offset_bottom = 108.0
-
-[node name="Cabinet" type="Node2D" parent="." unique_id=245174301]
-script = ExtResource("4_ga4lu")
 
 [node name="FightMusic" type="AudioStreamPlayer" parent="." unique_id=1824599897]
 stream = ExtResource("5_u30h6")
@@ -56,6 +48,17 @@ offset_right = 780.0
 offset_bottom = 140.19496
 text = "incoming damage: N"
 
+[node name="CardZones" type="Node2D" parent="." unique_id=1643539009]
+script = ExtResource("5_syqip")
+
+[node name="Hand" type="Node2D" parent="CardZones" unique_id=137973367]
+script = ExtResource("2_s0t75")
+
+[node name="Battlefield" type="Node2D" parent="CardZones" unique_id=1040650560]
+script = ExtResource("3_kx3u1")
+
+[node name="Cabinet" type="Node2D" parent="CardZones" unique_id=245174301]
+script = ExtResource("4_ga4lu")
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
-[connection signal="played_card" from="Hand" to="." method="_on_hand_played_card"]
 [connection signal="button_gui_input" from="PassTurnButton" to="." method="_on_pass_turn_button_button_gui_input"]
